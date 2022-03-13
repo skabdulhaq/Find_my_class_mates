@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, flash
 from templates.secrtes import *
 import pyrebase
+import gunicorn
 
 app = Flask(__name__)
 firebase_db = pyrebase.initialize_app(firebaseConfig)
