@@ -127,6 +127,7 @@ table{
 .footer-link:hover{
     color: #0A0908;
 }
+
 .footer-add{
     background-color: #0A369D;
     color: #fff;
@@ -134,7 +135,7 @@ table{
     text-align: center;
     margin: 3rem 0 auto;
     width: 100%;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     padding: 1rem 0;
 }
