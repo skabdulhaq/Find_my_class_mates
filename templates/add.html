@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../static/css/styles.css">
+        <title>Find My Friends</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <nav>
+                <h1 class="nav-title">Find My Friends</h1>
+            </nav>
+            <div class="links-box">
+                <a class="link btn" href="{{url_for('classmates')}}">Classmates</a>
+            </div>
+            <form action="{{url_for('home')}}" method="post">
+                <label for="email" class="form-label">Sastra Mail*</label><br>
+                <input class="form-input" type="email" placeholder="12XXXXXXX@sastra.ac.in" name="email" id="email"><br>
+                <label for="phone" class="form-label">Phone Number</label><br>
+                <input class="form-input" type="tel" name="phone" placeholder="Phone Number" id="phone"><br>
+                <label for="section" class="form-label">Choose your section*</label><br>
+                <select class="form-input" name="section" id="section">
+                    <option value="">Select Your Section</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                    <option value="G">G</option>
+                    <option value="H">H</option>
+                    <option value="I">I</option>
+                    <option value="J">J</option>
+                    <option value="K">K</option>
+                    <option value="L">L</option>
+                    <option value="M">M</option>
+                    <option value="N">N</option>
+                    <option value="O">O</option>
+                    <option value="P">P</option>
+                    <option value="Q">Q</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                    <option value="A1">A1</option>
+                    <option value="B1">B1</option>
+                    <option value="C1">C1</option>
+                    <option value="D1">D1</option>
+                    <option value="E1">E1</option>
+                    <option value="F1">F1</option>
+                    <option value="G1">G1</option>
+                    <option value="H1">H1</option>
+                    <option value="I1">I1</option>
+                    <option value="J1">J1</option>
+                    <option value="K1">K1</option>
+                    <option value="L1">L1</option>
+                    <option value="M1">M1</option>
+                    <option value="N1">N1</option>
+                    <option value="O1">O1</option>
+                    <option value="P1">P1</option>
+                    <option value="Q1">Q1</option>
+                    <option value="R1">R1</option>
+                    <option value="S1">S1</option>
+                </select><br>
+                <input type="submit" class="btn" value="Add Me">
+                {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <p class="flashes note" style="color: red;font-size:1.3rem">{{ message }}</p>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+            </form>
+            <footer>
+            <p class="footer-add">Made By <a class="footer-link" href="https://github.com/skabdulhaq/" target="_blank">Me.</a> Feedback <a class="footer-link" href="{{url_for('feedback')}}">Hear</a></p>
+    </footer>
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../static/css/styles.css">
+        <title>Classmates</title>
+    </head>
+
+    <body>
+        <h1 class="nav-title">Classmates</h1>
+                    <div class="links-box">
+                        <a class="link btn"  href="{{url_for('home')}}">Add</a>
+                    </div>
+        <div class="section">
+            {% for section in data %}
+            <h1 class="section-name">Section-{{section}}</h1>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Phone Number</th>
+                    <th>Register N.O</th>
+                </tr>
+                {%for details in data[section]%}
+                <tr>
+                    <td>{{data[section][details].name}}</td>
+                    <td>{{data[section][details].number}}</td>
+                    <td>{{details}}</td>
+                </tr>
+                {%endfor%}
+            </table>
+            {% endfor %}
+        </div>
+    </body>
+        {% include "footer.html" %}
+
+</html>

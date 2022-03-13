@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../static/css/styles.css">
+        <title>Feedback</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <nav>
+                <h1 class="nav-title">Feedback !!</h1>
+            </nav>
+            <div class="links-box">
+                <a class="link btn" href="{{url_for('home')}}">add</a>
+                <a class="link btn" href="{{url_for('classmates')}}">Classmates</a>
+            </div>
+            <form action="{{url_for('feedback')}}" method="post">
+                <label for="email" class="form-label">Sastra Mail*</label><br>
+                <input class="form-input" type="email" placeholder="12XXXXXXX@sastra.ac.in" name="email" id="email"><br>
+                <label for="phone" class="form-label">Phone Number</label><br>
+                <input class="form-input" type="tel" name="phone" placeholder="Phone Number" id="phone"><br>
+                <label for="textarea" class="form-label">Message</label><br>
+                <textarea name="message" class="form-input"  id="textarea" cols="35" rows="8"></textarea>
+                <input type="submit"  class="btn" value="Submit">
+                {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <p class="flashes note" style="color: red;font-size:1.3rem">{{ message }}</p>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+            </form>
+            <footer>
+            <p class="footer-add">Made By <a class="footer-link" href="https://github.com/skabdulhaq/" target="_blank">Me.</a> Feedback <a class="footer-link" href="{{url_for('feedback')}}">Hear</a></p>
+    </footer>
+        </div>
+    </body>
+
+</html>
