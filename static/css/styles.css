@@ -111,12 +111,18 @@ table{
 .section-name{
     font-family: "Baloo Bhai 2", cursive;
 }
+body{
+  display:flex;
+  flex-direction:column;
+}
+
 .footer{
+    margin-top:auto;
     background-color: #0A369D;
     color: #fff;
     font-size: 1.1rem;
     text-align: center;
-    margin: 3rem 0 auto;
+    /*margin: 3rem 0 auto;*/
     width: 100%;
     padding: 1rem 0;
 }
@@ -135,7 +141,6 @@ table{
     text-align: center;
     margin: 3rem 0 auto;
     width: 100%;
-    position: fixed;
     bottom: 0;
     padding: 1rem 0;
 }
