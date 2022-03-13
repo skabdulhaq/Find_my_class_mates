@@ -53,9 +53,9 @@ def home():
                 db.child("users").child(section).child(email.split("@")[0]).set(packet)
                 return redirect("/classmates")
             else:
-                return render_template("add.html", flash=flash("Your mail has been registered"))
+                return render_template("add.html", flash=flash("Your mail has been registered click on classmates button to check your classmates."))
         else:
-            return render_template("add.html", flash=flash("Incorrect details or empty fields"))
+            return render_template("add.html", flash=flash("Incorrect details or empty fields."))
     else:
         if request.method == "POST":
             return render_template("add.html", flash=flash("*fields are required."))
@@ -87,9 +87,9 @@ def feedback():
                 "message": message
             }
             db.child("feedback").child(number).push(packet)
-            return render_template("feedback.html", flash=flash("Thanks For Your Feedback"))
+            return render_template("feedback.html", flash=flash("Thanks For Your Feedback."))
         else:
-            return render_template("feedback.html", flash=flash("Incorrect details or empty fields"))
+            return render_template("feedback.html", flash=flash("Incorrect details or empty fields."))
     else:
         if request.method == "POST":
             return render_template("feedback.html", flash=flash("*fields are required."))
