@@ -181,6 +181,7 @@ td:last-child{
     color: #f2f2f2;
     text-align: center;
     font-size: 1.5rem;
+    padding-top: 1rem;
 }
 .nav-list{
     border-radius: 20px;
