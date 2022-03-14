@@ -20,9 +20,11 @@
             <a class="link btn"  href="{{url_for('home')}}">Add</a>
         </div>
         <div class="nav-list">
+            <h2 class="heading">Select your section</h2>
             {% for section in data %}
             <a class="navigation" style="display: inline-block; text-align: center; margin: 20px 10px"  href="#{{section}}">{{section}}</a>
-            {%endfor%}
+            {% endfor %}
+            <a href="#total" class="navigation">Total</a>
         </div>
         <div class="section">
             {% for section in data %}
@@ -44,7 +46,7 @@
             {% endfor %}
         </div>
     <div>
-        <p class="total">{{total}} students out of 1991 registered </p>
+        <p class="total" id="total">{{total}} students out of 1991 registered </p>
     </div>
     <footer>
         <p class="footer">Made By <a class="footer-link" href="https://github.com/skabdulhaq/" target="_blank">Me.</a> Feedback <a class="footer-link" href="{{url_for('feedback')}}">Hear</a></p>
