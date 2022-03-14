@@ -26,7 +26,7 @@
         </div>
         <div class="section">
             {% for section in data %}
-            <h1 id="{{section}}" class="section-name">Section-{{section}}</h1>
+            <h1 id="{{section}}" class="section-name">Section-{{section}} ({{len(data[section])}})</h1>
             <table>
                 <tr>
                     <th>Name</th>

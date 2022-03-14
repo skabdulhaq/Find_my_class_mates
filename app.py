@@ -69,7 +69,7 @@ def classmates():
     users = db.get()
     for _ in users:
         students = _.val()
-    return render_template("classmate.html", data=students)
+    return render_template("classmate.html", data=students, len=len)
 
 
 @app.route("/feedback", methods=["POST", "GET"])
