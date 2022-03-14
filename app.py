@@ -81,6 +81,7 @@ def feedback():
         name_get = name(str(email.split("@")[0]))
         if name_get is not None and len(number) == 10:
             packet = {
+                "completed": False,
                 "name": name_get,
                 "email": email,
                 "number": number,
