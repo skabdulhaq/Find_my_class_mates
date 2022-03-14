@@ -16,12 +16,17 @@
 
     <body>
         <h1 class="nav-title">Classmates</h1>
-                    <div class="links-box">
-                        <a class="link btn"  href="{{url_for('home')}}">Add</a>
-                    </div>
+        <div class="links-box">
+            <a class="link btn"  href="{{url_for('home')}}">Add</a>
+        </div>
+        <div class="nav-list">
+            {% for section in data %}
+            <a class="navigation" style="display: inline-block; text-align: center; margin: 20px 10px"  href="#{{section}}">{{section}}</a>
+            {%endfor%}
+        </div>
         <div class="section">
             {% for section in data %}
-            <h1 class="section-name">Section-{{section}}</h1>
+            <h1 id="{{section}}" class="section-name">Section-{{section}}</h1>
             <table>
                 <tr>
                     <th>Name</th>

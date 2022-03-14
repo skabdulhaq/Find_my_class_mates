@@ -177,11 +177,29 @@ td:last-child{
     border-left: #0A0908 dashed;
     border-right: #0A0908 dashed;
 }
+.nav-list{
+    width: 500px;
+    background-color: #0A369D;
+    margin: 1rem auto;
+        font-size: 1.1rem;
+
+}
+.navigation:link{
+        color: #f2f2f2;
+    }
+    .navigation:visited{
+        color: #f2f2f2;
+    }
 @media screen and (max-width: 600px) {
     table{
         width: 99%;
         font-size: 1rem;
     }
+    .nav-list{
+        width: auto;
+        font-size: 1rem;
+    }
+
     td{
         font-size: 1rem;
         border-width:2px;
