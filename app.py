@@ -69,7 +69,12 @@ def classmates():
     users = db.get()
     for _ in users:
         students = _.val()
-    return render_template("classmate.html", data=students, len=len)
+    total = 0
+    for sec in students:
+        total += len(students[sec])
+        # print(f"{sec} - ")
+    print(total)
+    return render_template("classmate.html", data=students, len=len, total=total)
 
 
 @app.route("/feedback", methods=["POST", "GET"])
