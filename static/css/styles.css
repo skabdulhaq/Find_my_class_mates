@@ -218,3 +218,6 @@ td:last-child{
 #textarea{
     font-size: 1rem;
 }
+table:last-child{
+    margin-bottom: 2rem;
+}
