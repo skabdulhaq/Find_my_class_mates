@@ -10,6 +10,7 @@ app.secret_key = "key"
 
 
 def name(regno):
+    global find
     find = False
     with app.open_resource('students-data.csv', "r") as file:
         csv_file = csv.reader(file, delimiter=",")
@@ -72,8 +73,7 @@ def classmates():
     total = 0
     for sec in students:
         total += len(students[sec])
-        # print(f"{sec} - ")
-    print(total)
+    db.child("additional_data").push({"total": total})
     return render_template("classmate.html", data=students, len=len, total=total)
 
 
