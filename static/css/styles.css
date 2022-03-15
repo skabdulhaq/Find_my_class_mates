@@ -145,7 +145,7 @@ body{
   display: none;
   position: fixed;
   bottom: 3rem;
-  right: 0;
+  right: 2rem;
   z-index: 99;
   border: none;
   outline: none;
