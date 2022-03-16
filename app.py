@@ -30,7 +30,7 @@ def not_exist(id_num):
     for section in data_:
         if id_num in data_[section].keys():
             # if reg == id_num:
-            print(data_[section].keys())
+            # print(data_[section].keys())
             return False
     return True
 
@@ -42,8 +42,8 @@ def home():
         number = request.form["phone"]
         section = request.form["section"]
         x = name(str(email.split("@")[0]))
-        print(x)
-        print(email)
+        # print(x)
+        # print(email)
         not_exist_ = not_exist(email.split("@")[0])
         if x is not None:
             if not_exist_:
@@ -73,7 +73,7 @@ def classmates():
     total = 0
     for sec in students:
         total += len(students[sec])
-    db.child("additional_data").push({"total": total})
+    db.child("additional_data").set({"total": total})
     return render_template("classmate.html", data=students, len=len, total=total)
 
 
